@@ -38,13 +38,13 @@ const guessNumberInput = document.getElementById("guessNumberInput")
 
 guessNumberForm.addEventListener('submit', (event)=> {
   event.preventDefault()
-  const {number} = guessNumberInput
-  axios.post('http://localhost:4000/guess', number)
+  const number = guessNumberInput.value
+  console.log(number)
+  axios.post('http://localhost:4000/api/guess', {number})
   .then(res => {
-    console.log(res.data)
+    alert(res.data)
   })
   .catch(err => console.log(err))
-  console.log(event.target.number)
 })
 
 // Extra feature 3) add a fortune to array FE

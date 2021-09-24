@@ -51,12 +51,12 @@ app.get("/api/number", (req, res) => {
 // Extra feature 2) Guess my number BE
 app.post("/api/guess", (req, res) => {
   const {number} = req.body
-  if (number === "13") {
+  console.log(req.body)
+  if (+number === 13) {
   res.status(200).send("Correct!")
   } else {
     res.status(200).send("Sorry, wrong number")
   } 
-  console.log(number)
 });
 
 // Extra feature 3) add a fortune to array BE
